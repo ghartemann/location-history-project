@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-const test =
+
 </script>
 
 <style scoped>

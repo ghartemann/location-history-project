@@ -1,4 +1,4 @@
-# Symfony 7 + Vue 3 + Vite + Tailwind
+# Location history project
 
 ## Project setup
 
@@ -17,11 +17,6 @@ symfony serve -d
 
 ```
 vite
-```
-
-### Compiles and minifies for production
-
-```
 vite build
 ```
 

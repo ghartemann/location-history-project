@@ -6,6 +6,8 @@ import App from '@pages/App.vue';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 
+import 'animate.css';
+
 import router from "@/js/router";
 
 import '@mdi/font/css/materialdesignicons.css';

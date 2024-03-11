@@ -1,10 +1,20 @@
-const json = require('big-json');
-import source from './../../source-json/records.json';
+const fs = require('fs');
+// import * as json from 'big-json'
+// import {ref} from "vue";
 
-const stringifyStream = json.createStringifyStream({
-    body: source
-});
+export function useBigJson() {
+    function openBigJson(filename) {
+        const readStream = fs.createReadStream('../../source-json/' + filename);
+        // const parseStream = json.createParseStream();
 
-stringifyStream.on('data', function(strChunk) {
-    // => BIG_POJO will be sent out in JSON chunks as the object is traversed
-});
+        // const jsonFile = ref(null);
+        // parseStream.on('data', function(data) {
+            //jsonFile.value = data;
+        // });
+
+        // readStream.pipe(parseStream);
+
+        return { jsonFile: null };
+    }
+    return { openBigJson }
+}

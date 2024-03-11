@@ -5,13 +5,13 @@
         </div>
 
         <div class="tw-flex tw-gap-5">
-            <a class="button animate__animated animate__slideInLeft" href="/cyril">
+            <router-link class="button animate__animated animate__slideInLeft" :to="{name: 'cyril'}">
                 Le truc de Cyril
-            </a>
+            </router-link>
 
-            <a class="button animate__animated animate__slideInRight" href="/guillaume">
+            <router-link class="button animate__animated animate__slideInRight" :to="{name: 'guillaume'}">
                 Le truc de Guillaume
-            </a>
+            </router-link>
         </div>
     </div>
 </template>

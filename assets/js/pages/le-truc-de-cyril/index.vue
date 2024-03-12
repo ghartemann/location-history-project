@@ -27,7 +27,9 @@ function init() {
     let len = json.length;
 
     for (let i = 0; i < len; i++) {
-        latlngs.push(new L.LatLng(json[i]["lat"], json[i]["lon"]));
+        if (json[i] && json[i]["lat"] && json[i]["lon"]) {
+            latlngs.push(new L.LatLng(json[i]["lat"], json[i]["lon"]));
+        }
     }
 
     let line = L.polyline(latlngs, {snakingSpeed: 800});

@@ -38,7 +38,9 @@ class MinifyJsonCommand extends Command
         $file_handle = file_get_contents($this->kernel->getProjectDir() . '/assets/source-json/Records.json');
 
         $json = array_map(function ($a) {
-            return ['lat' => $a['latitudeE7']/10000000, 'lon' => $a['longitudeE7']/10000000];
+            if (isset($a['latitudeE7']) && isset($a['longitudeE7'])) {
+                return ['lat' => $a['latitudeE7']/10000000, 'lon' => $a['longitudeE7']/10000000];
+            }
         }, json_decode($file_handle, true)['locations']);
 
         $this->filesystem->dumpFile($this->kernel->getProjectDir() . '/assets/source-json/minify.json', json_encode($json));
